@@ -1,0 +1,10 @@
+<svg width="71" height="68" viewBox="0 0 71 68" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="34.1129" cy="15.703" r="6.19177" fill="#FFD700"/>
+<line x1="34.2124" y1="17.203" x2="34.2124" y2="43.2723" stroke="#FFD700" stroke-width="3" stroke-linecap="round"/>
+<line x1="20.5792" y1="23.726" x2="33.0334" y2="26.9252" stroke="#FFD700" stroke-width="3" stroke-linecap="round"/>
+<line x1="1.5" y1="-1.5" x2="15.4807" y2="-1.5" transform="matrix(-0.96559 0.260068 -0.353859 -0.935299 50.5093 22.3623)" stroke="#FFD700" stroke-width="3" stroke-linecap="round"/>
+<line x1="1.5" y1="-1.5" x2="9.42936" y2="-1.5" transform="matrix(-0.492983 -0.870039 0.927394 -0.374087 51.6741 24.5704)" stroke="#FFD700" stroke-width="3" stroke-linecap="round"/>
+<line x1="27.3425" y1="55.9341" x2="34.1476" y2="43.7433" stroke="#FFD700" stroke-width="3" stroke-linecap="round"/>
+<line x1="1.5" y1="-1.5" x2="15.4616" y2="-1.5" transform="matrix(-0.487417 -0.87317 -0.87317 0.487417 40.3223 57.975)" stroke="#FFD700" stroke-width="3" stroke-linecap="round"/>
+<path d="M35.2139 1.5C53.8942 1.50013 68.9277 15.9955 68.9277 33.7432C68.9277 51.4908 53.8942 65.9862 35.2139 65.9863C16.5334 65.9863 1.50003 51.4909 1.5 33.7432C1.5 15.9955 16.5334 1.5 35.2139 1.5Z" stroke="#FFD700" stroke-width="3"/>
+</svg>

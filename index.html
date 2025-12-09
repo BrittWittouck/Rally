@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rally Experience Skeleton</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  <div id="app" class="app" data-scene="start">
+    <nav class="progress">
+      <span data-indicator="start" class="is-active">Intro</span>
+      <span data-indicator="trainingHub">Gym</span>
+      <span data-indicator="passLearn">Pass</span>
+      <span data-indicator="spikeLearn">Spike</span>
+      <span data-indicator="blockLearn">Block</span>
+      <span data-indicator="transition">Match</span>
+    </nav>
+
+    <section class="scene start" data-scene-panel="start">
+      <div class="scene__content">
+        <h1 class="hero-title">Step onto the court.<br>Play volleyball with your own body.</h1>
+        <p class="hero-subtitle">Your webcam becomes your coach. Learn the three basic poses – pass, spike, and block –
+          and then play a real match.</p>
+
+        <div class="story-intro">
+          <div class="coach-message">
+            <span class="coach-label">👋 Your Coach</span>
+            <p class="coach-text">"Welcome to the court! I'm here to help you master volleyball fundamentals. You don't
+              need special equipment – just your body and a webcam."</p>
+          </div>
+
+          <div class="coach-message">
+            <p class="coach-text">"Volleyball is all about position and timing. Whether you're receiving a ball,
+              attacking at the net, or defending – your body position is everything."</p>
+          </div>
+
+          <div class="coach-message">
+            <p class="coach-text">"I'll teach you three essential positions. Master these, and you're ready to play. Let
+              me show you how it works:"</p>
+          </div>
+        </div>
+
+        <div class="training-steps">
+          <div class="step">
+            <span class="step-number">1</span>
+            <div class="step-content">
+              <h3>Train</h3>
+              <p>Learn how to stand for pass, spike, and block.</p>
+            </div>
+          </div>
+          <div class="step">
+            <span class="step-number">2</span>
+            <div class="step-content">
+              <h3>Pose</h3>
+              <p>Assume the position within the time limit; your camera will check you.</p>
+            </div>
+          </div>
+          <div class="step">
+            <span class="step-number">3</span>
+            <div class="step-content">
+              <h3>Play</h3>
+              <p>Perform the requested poses to win the match.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="cta-group">
+          <button data-next="trainingHub" class="start-btn primary-cta">Start my training</button>
+        </div>
+      </div>
+      <div class="scene__ball" id="startBall"></div>
+      <div class="stadium-lights">
+        <div class="light-beam light-1"></div>
+        <div class="light-beam light-2"></div>
+        <div class="light-beam light-3"></div>
+      </div>
+      <div class="court-line" id="courtLine"></div>
+    </section>
+
+    <!-- TRAINING HUB OVERVIEW -->
+    <section class="scene training-hub" data-scene-panel="trainingHub">
+      <div class="hub-content">
+        <h1 class="hub-title">Training – build your foundation</h1>
+        <p class="hub-subtitle">We will proceed step by step. You must correctly perform each pose within the time limit
+          to continue.</p>
+
+        <div class="training-tiles">
+          <div class="training-tile active" data-pose="pass">
+            <div class="tile-icon">
+              <svg width="71" height="68" viewBox="0 0 71 68" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="34.5463" cy="16.705" r="6.19177" fill="#FFD700" />
+                <line x1="34.6458" y1="18.205" x2="34.6458" y2="44.2743" stroke="#FFD700" stroke-width="3"
+                  stroke-linecap="round" />
+                <line x1="33.3178" y1="38.1695" x2="30.0448" y2="28.2959" stroke="#FFD700" stroke-width="3"
+                  stroke-linecap="round" />
+                <line x1="36.4747" y1="37.8679" x2="38.9002" y2="28.8398" stroke="#FFD700" stroke-width="3"
+                  stroke-linecap="round" />
+                <line x1="30.0911" y1="27.6637" x2="39.2556" y2="27.6637" stroke="#FFD700" stroke-width="3"
+                  stroke-linecap="round" />
+                <line x1="27.7759" y1="56.936" x2="34.581" y2="44.7452" stroke="#FFD700" stroke-width="3"
+                  stroke-linecap="round" />
+                <line x1="1.5" y1="-1.5" x2="15.4616" y2="-1.5"
+                  transform="matrix(-0.487417 -0.87317 -0.87317 0.487417 40.7556 58.9769)" stroke="#FFD700"
+                  stroke-width="3" stroke-linecap="round" />
+                <path
+                  d="M35.2139 1.5C53.8942 1.50013 68.9277 15.9955 68.9277 33.7432C68.9277 51.4908 53.8942 65.9862 35.2139 65.9863C16.5334 65.9863 1.50003 51.4909 1.5 33.7432C1.5 15.9955 16.5334 1.5 35.2139 1.5Z"
+                  stroke="#FFD700" stroke-width="3" />
+              </svg>
+            </div>
+            <div class="tile-badge" id="activeBadge" data-flip-id="badge">You're here</div>
+            <h2 class="tile-title">Pass</h2>
+            <p class="tile-description">Learn how to receive low and stable.</p>
+            <button data-next="passLearn" class="tile-cta">Train my pass</button>
+          </div>
+
+          <div class="training-tile locked" data-pose="spike">
+            <div class="tile-icon">
+              <svg width="71" height="68" viewBox="0 0 71 68" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="34.1129" cy="15.703" r="6.19177" fill="#FFD700" />
+                <line x1="34.2124" y1="17.203" x2="34.2124" y2="43.2723" stroke="#FFD700" stroke-width="3"
+                  stroke-linecap="round" />
+                <line x1="20.5792" y1="23.726" x2="33.0334" y2="26.9252" stroke="#FFD700" stroke-width="3"
+                  stroke-linecap="round" />
+                <line x1="1.5" y1="-1.5" x2="15.4807" y2="-1.5"
+                  transform="matrix(-0.96559 0.260068 -0.353859 -0.935299 50.5093 22.3623)" stroke="#FFD700"
+                  stroke-width="3" stroke-linecap="round" />
+                <line x1="1.5" y1="-1.5" x2="9.42936" y2="-1.5"
+                  transform="matrix(-0.492983 -0.870039 0.927394 -0.374087 51.6741 24.5704)" stroke="#FFD700"
+                  stroke-width="3" stroke-linecap="round" />
+                <line x1="27.3425" y1="55.9341" x2="34.1476" y2="43.7433" stroke="#FFD700" stroke-width="3"
+                  stroke-linecap="round" />
+                <line x1="1.5" y1="-1.5" x2="15.4616" y2="-1.5"
+                  transform="matrix(-0.487417 -0.87317 -0.87317 0.487417 40.3223 57.975)" stroke="#FFD700"
+                  stroke-width="3" stroke-linecap="round" />
+                <path
+                  d="M35.2139 1.5C53.8942 1.50013 68.9277 15.9955 68.9277 33.7432C68.9277 51.4908 53.8942 65.9862 35.2139 65.9863C16.5334 65.9863 1.50003 51.4909 1.5 33.7432C1.5 15.9955 16.5334 1.5 35.2139 1.5Z"
+                  stroke="#FFD700" stroke-width="3" />
+              </svg>
+            </div>
+            <div class="tile-lock-icon">🔒</div>
+            <h2 class="tile-title">Spike</h2>
+            <p class="tile-description">Jump, stretch, and hit above the net.</p>
+            <button data-next="spikeLearn" class="tile-cta" disabled>Train my spike</button>
+          </div>
+
+          <div class="training-tile locked" data-pose="block">
+            <div class="tile-icon">
+              <svg width="71" height="68" viewBox="0 0 71 68" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="35.0658" cy="16.4164" r="6.19177" fill="#FFD700" />
+                <line x1="35.1653" y1="17.9164" x2="35.1653" y2="43.9857" stroke="#FFD700" stroke-width="3"
+                  stroke-linecap="round" />
+                <line x1="22.137" y1="9.45898" x2="31.5177" y2="27.9996" stroke="#FFD700" stroke-width="3"
+                  stroke-linecap="round" />
+                <line x1="1.5" y1="-1.5" x2="22.2787" y2="-1.5"
+                  transform="matrix(-0.451459 0.892292 0.892292 0.451459 50.3059 8.79773)" stroke="#FFD700"
+                  stroke-width="3" stroke-linecap="round" />
+                <line x1="28.2954" y1="56.6475" x2="35.1005" y2="44.4567" stroke="#FFD700" stroke-width="3"
+                  stroke-linecap="round" />
+                <line x1="1.5" y1="-1.5" x2="15.4616" y2="-1.5"
+                  transform="matrix(-0.487417 -0.87317 -0.87317 0.487417 41.2751 58.6884)" stroke="#FFD700"
+                  stroke-width="3" stroke-linecap="round" />
+                <path
+                  d="M35.2139 1.5C53.8942 1.50013 68.9277 15.9955 68.9277 33.7432C68.9277 51.4908 53.8942 65.9862 35.2139 65.9863C16.5334 65.9863 1.50003 51.4909 1.5 33.7432C1.5 15.9955 16.5334 1.5 35.2139 1.5Z"
+                  stroke="#FFD700" stroke-width="3" />
+              </svg>
+            </div>
+            <div class="tile-lock-icon">🔒</div>
+            <h2 class="tile-title">Block</h2>
+            <p class="tile-description">Close the wall, block the attack.</p>
+            <button data-next="blockLearn" class="tile-cta" disabled>Train my block</button>
+          </div>
+        </div>
+      </div>
+      <div class="stadium-lights">
+        <div class="light-beam light-1"></div>
+        <div class="light-beam light-2"></div>
+        <div class="light-beam light-3"></div>
+      </div>
+    </section>
+
+    <!-- PASS TRAINING -->
+    <section class="scene training" data-scene-panel="passLearn">
+      <div class="training-left">
+        <p class="eyebrow">Training · Pass · Learn</p>
+        <h2 class="training-title">Pass – receive the ball in a controlled manner</h2>
+        <ol class="training-steps-list">
+          <li><strong>Feet:</strong> shoulder-width apart, one foot slightly in front of the other.</li>
+          <li><strong>Knees:</strong> bend your knees, stay low.</li>
+          <li><strong>Arms:</strong> stretch your arms out in front of you, hands together, flat platform.</li>
+        </ol>
+        <button data-next="passPractice" class="training-next-btn">Start pass training</button>
+      </div>
+      <div class="training-right">
+        <div class="pose-illustration pass-pose">
+          <svg viewBox="0 0 200 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Head -->
+            <circle cx="100" cy="40" r="20" fill="var(--light-blue)" opacity="0.8" />
+            <!-- Body -->
+            <line x1="100" y1="60" x2="100" y2="140" stroke="var(--light-blue)" stroke-width="8"
+              stroke-linecap="round" />
+            <!-- Arms (extended down) -->
+            <path d="M 100 80 L 70 120 L 100 140" stroke="var(--ball-yellow)" stroke-width="8" stroke-linecap="round"
+              stroke-linejoin="round" fill="none" />
+            <path d="M 100 80 L 130 120 L 100 140" stroke="var(--ball-yellow)" stroke-width="8" stroke-linecap="round"
+              stroke-linejoin="round" fill="none" />
+            <!-- Legs -->
+            <line x1="100" y1="140" x2="80" y2="200" stroke="var(--light-blue)" stroke-width="8"
+              stroke-linecap="round" />
+            <line x1="100" y1="140" x2="120" y2="200" stroke="var(--light-blue)" stroke-width="8"
+              stroke-linecap="round" />
+            <!-- Hands clasped indicator -->
+            <circle cx="100" cy="140" r="8" fill="var(--ball-yellow)" />
+          </svg>
+          <p class="pose-label">Pass Position</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="scene practice" data-scene-panel="passPractice">
+      <div class="scene__content">
+        <p class="eyebrow">Training · Pass · Practice</p>
+        <h2 id="currentPoseLabel">Pass</h2>
+        <p class="microtext">"Imagine the ball coming straight at your chest. You don't catch it – you direct it
+          upwards."</p>
+        <div class="feedback-panel" id="passFeedback">
+          <div class="feedback-content"></div>
+        </div>
+      </div>
+      <div class="video-container">
+        <div class="status-bar" id="passStatus">Get ready...</div>
+        <canvas id="poseCanvas"></canvas>
+        <div class="countdown-ring">
+          <svg viewBox="0 0 140 140" aria-hidden="true">
+            <circle class="ring-track" cx="70" cy="70" r="52" />
+            <circle class="ring-progress" cx="70" cy="70" r="52" />
+          </svg>
+          <div class="count" id="practiceCount">5</div>
+        </div>
+      </div>
+      <div id="poseResults">Loading...</div>
+    </section>
+
+    <!-- SPIKE TRAINING -->
+    <section class="scene training" data-scene-panel="spikeLearn">
+      <div class="training-left">
+        <p class="eyebrow">Training · Spike · Learn</p>
+        <h2 class="training-title">Spike – attack with power</h2>
+        <ol class="training-steps-list">
+          <li><strong>Run-up:</strong> put one foot in front of the other, as if you want to jump.</li>
+          <li><strong>Arms:</strong> one arm back, one arm helps you swing up.</li>
+          <li><strong>Jump:</strong> stretch yourself out, think "hit the top of the net."</li>
+        </ol>
+        <button data-next="spikePractice" class="training-next-btn">Start spike training</button>
+      </div>
+      <div class="training-right">
+        <div class="pose-illustration spike-pose">
+          <svg width="35" height="49" viewBox="0 0 35 49" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <line x1="3.73472" y1="14.2148" x2="16.1889" y2="17.414" stroke="#FFD700" stroke-width="3"
+              stroke-linecap="round" />
+            <line x1="1.5" y1="-1.5" x2="15.4807" y2="-1.5"
+              transform="matrix(-0.96559 0.260068 -0.353859 -0.935299 33.665 12.3835)" stroke="#FFD700" stroke-width="3"
+              stroke-linecap="round" />
+            <line x1="1.5" y1="-1.5" x2="9.42936" y2="-1.5"
+              transform="matrix(-0.492983 -0.870039 0.927394 -0.374087 34.7192 14.5916)" stroke="#FFD700"
+              stroke-width="3" stroke-linecap="round" />
+            <circle cx="17.2723" cy="6.19177" r="6.19177" fill="#145877" />
+            <circle cx="2.91541" cy="13.485" r="2.91541" fill="#FFD700" />
+            <circle cx="28.3822" cy="6.19177" r="2.91541" fill="#FFD700" />
+            <line x1="17.3718" y1="7.69177" x2="17.3718" y2="33.7611" stroke="#145877" stroke-width="3"
+              stroke-linecap="round" />
+            <line x1="10.5019" y1="46.4229" x2="17.307" y2="34.2321" stroke="#145877" stroke-width="3"
+              stroke-linecap="round" />
+            <line x1="1.5" y1="-1.5" x2="15.4616" y2="-1.5"
+              transform="matrix(-0.487417 -0.87317 -0.87317 0.487417 23.4817 48.4637)" stroke="#145877" stroke-width="3"
+              stroke-linecap="round" />
+          </svg>
+          <p class="pose-label">Spike Position</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="scene practice" data-scene-panel="spikePractice">
+      <div class="scene__content">
+        <p class="eyebrow">Training · Spike · Practice</p>
+        <h2 id="spikeLabel">Spike</h2>
+        <p class="microtext">"As if a perfect set is coming: you're already in the air, ready to hit."</p>
+        <div class="feedback-panel" id="spikeFeedback">
+          <div class="feedback-content"></div>
+        </div>
+      </div>
+      <div class="video-container">
+        <div class="status-bar" id="spikeStatus">Get ready...</div>
+        <canvas id="spikeCanvas"></canvas>
+        <div class="countdown-ring">
+          <svg viewBox="0 0 140 140" aria-hidden="true">
+            <circle class="ring-track" cx="70" cy="70" r="52" />
+            <circle class="ring-progress" cx="70" cy="70" r="52" />
+          </svg>
+          <div class="count" id="spikeCount">5</div>
+        </div>
+      </div>
+      <div id="spikeResults">Loading...</div>
+    </section>
+
+    <!-- BLOCK TRAINING -->
+    <section class="scene training" data-scene-panel="blockLearn">
+      <div class="training-left">
+        <p class="eyebrow">Training · Block · Learn</p>
+        <h2 class="training-title">Block – build the wall</h2>
+        <ol class="training-steps-list">
+          <li><strong>Feet:</strong> slightly wider than shoulder width.</li>
+          <li><strong>Arms:</strong> both arms straight up, hands open.</li>
+          <li><strong>Core:</strong> your torso is stable, as if you are really jumping against the net.</li>
+        </ol>
+        <button data-next="blockPractice" class="training-next-btn">Start block training</button>
+      </div>
+      <div class="training-right">
+        <div class="pose-illustration block-pose">
+          <svg viewBox="0 0 200 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Head -->
+            <circle cx="100" cy="50" r="20" fill="var(--light-blue)" opacity="0.8" />
+            <!-- Body -->
+            <line x1="100" y1="70" x2="100" y2="150" stroke="var(--light-blue)" stroke-width="8"
+              stroke-linecap="round" />
+            <!-- Arms (both up) -->
+            <path d="M 100 90 L 75 30" stroke="var(--ball-yellow)" stroke-width="8" stroke-linecap="round" />
+            <path d="M 100 90 L 125 30" stroke="var(--ball-yellow)" stroke-width="8" stroke-linecap="round" />
+            <!-- Legs -->
+            <line x1="100" y1="150" x2="90" y2="210" stroke="var(--light-blue)" stroke-width="8"
+              stroke-linecap="round" />
+            <line x1="100" y1="150" x2="110" y2="210" stroke="var(--light-blue)" stroke-width="8"
+              stroke-linecap="round" />
+            <!-- Hand indicators -->
+            <circle cx="75" cy="30" r="8" fill="var(--ball-yellow)" />
+            <circle cx="125" cy="30" r="8" fill="var(--ball-yellow)" />
+          </svg>
+          <p class="pose-label">Block Position</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="scene practice" data-scene-panel="blockPractice">
+      <div class="scene__content">
+        <p class="eyebrow">Training · Block · Practice</p>
+        <h2 id="blockLabel">Block</h2>
+        <p class="microtext">"Think of a wall close to the net. You are the last barrier."</p>
+        <div class="feedback-panel" id="blockFeedback">
+          <div class="feedback-content"></div>
+        </div>
+      </div>
+      <div class="video-container">
+        <div class="status-bar" id="blockStatus">Get ready...</div>
+        <canvas id="blockCanvas"></canvas>
+        <div class="countdown-ring">
+          <svg viewBox="0 0 140 140" aria-hidden="true">
+            <circle class="ring-track" cx="70" cy="70" r="52" />
+            <circle class="ring-progress" cx="70" cy="70" r="52" />
+          </svg>
+          <div class="count" id="blockCount">5</div>
+        </div>
+      </div>
+      <div id="blockResults">Loading...</div>
+    </section>
+
+    <section class="scene transition" data-scene-panel="transition">
+      <div class="scene__content">
+        <p class="eyebrow">Training complete</p>
+        <h2>Time for your first game!</h2>
+        <div class="actions">
+          <button data-next="match">I feel ready</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="scene match" data-scene-panel="match">
+      <!-- Scoreboard at top -->
+      <div class="match-scoreboard">
+        <div class="scoreboard-player">
+          <span class="scoreboard-label">You</span>
+          <div class="score-rounds" id="playerRounds">
+            <span class="round-dot"></span>
+            <span class="round-dot"></span>
+            <span class="round-dot"></span>
+          </div>
+        </div>
+        <div class="scoreboard-vs">VS</div>
+        <div class="scoreboard-opponent">
+          <span class="scoreboard-label">Opponent</span>
+          <div class="score-rounds" id="opponentRounds">
+            <span class="round-dot"></span>
+            <span class="round-dot"></span>
+            <span class="round-dot"></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="scene__content">
+        <p class="eyebrow">Match · Rally Time!</p>
+        <h2 id="matchPoseLabel">Match time – show what you can do</h2>
+        <p class="match-subtitle">You will be given 3 random poses. Perform them correctly and on time to win the match.
+        </p>
+
+        <div class="pose-callout" id="poseCallout" style="display: none;">
+          <span class="pose-number" id="poseNumber">POSE 1</span>
+          <span class="pose-name" id="poseName">PASS</span>
+        </div>
+        <p class="pose-hint" id="poseHint" style="display: none;"></p>
+
+        <div class="actions">
+          <button id="matchStartBtn">Start Match</button>
+        </div>
+        <button id="matchRestartBtn" style="margin-top: 1rem; display: none;">Play Again</button>
+      </div>
+      <div class="video-container">
+        <canvas id="matchCanvas"></canvas>
+        <div class="countdown-ring">
+          <svg viewBox="0 0 140 140" aria-hidden="true">
+            <circle class="ring-track" cx="70" cy="70" r="52" />
+            <circle class="ring-progress" cx="70" cy="70" r="52" />
+          </svg>
+          <div class="count" id="matchCount">5</div>
+        </div>
+      </div>
+      <div class="status-bar" id="matchStatus">Get ready...</div>
+    </section>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/MotionPathPlugin.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/Flip.min.js"></script>
+  <script src="https://unpkg.com/ml5@latest/dist/ml5.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+
+</html>
