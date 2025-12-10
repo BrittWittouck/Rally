@@ -1240,7 +1240,8 @@ button.ghost {
   backdrop-filter: blur(10px);
 }
 
-.pose-illustration svg {
+.pose-illustration svg,
+.pose-illustration img {
   width: 200px;
   height: 300px;
   margin-bottom: 1.5rem;
